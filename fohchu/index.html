@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FOH除甲醛果冻专业除醛解决方案，高效分解甲醛，安全无毒，适用于新车、新房、衣柜等密闭空间。提供除醛果冻使用指南、效果对比及安全注意事项。">
+    <meta name="keywords" content="FOH除甲醛果冻,除醛果冻,甲醛清除剂,新车除甲醛,新房除甲醛,除甲醛产品">
+    <title>FOH除甲醛果冻-高效安全的新房新车甲醛清除解决方案</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c8f5f;
+            --primary-dark: #1e6b42;
+            --accent-color: #ff9800;
+            --bg-light: #f9fbfd;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e1e4e8;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Nav */
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            line-height: 1.2;
+        }
+
+        .hero h1 .highlight {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn-large {
+            padding: 14px 32px;
+            font-size: 1.1rem;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Features Section */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(44, 143, 95, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-color);
+            font-size: 24px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Usage Guide */
+        .usage-section {
+            background-color: var(--white);
+        }
+
+        .usage-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .usage-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .usage-steps {
+            margin-top: 30px;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .step-text p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .usage-visual {
+            background-color: #f0f4f8;
+            border-radius: var(--radius);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .usage-visual img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+        }
+
+        .usage-visual p {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Application Scenarios */
+        .scenarios-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .scenario-card {
+            position: relative;
+            height: 250px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            background-color: #ddd;
+        }
+
+        .scenario-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .scenario-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .scenario-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 20px;
+            color: var(--white);
+        }
+
+        .scenario-overlay h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .scenario-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--white);
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: 400;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            display: none;
+            padding-top: 10px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* Safety Notice */
+        .safety-box {
+            background-color: #fff3e0;
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            border-radius: 4px;
+            margin-top: 40px;
+        }
+
+        .safety-box h3 {
+            color: #e65100;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .safety-box ul {
+            margin-left: 20px;
+            color: #ef6c00;
+        }
+
+        .safety-box li {
+            margin-bottom: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .usage-container {
+                grid-template-columns: 1fr;
+            }
+
+            .scenarios-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                </svg>
+                <span>FOH除甲醛果冻</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#features" class="active">产品优势</a></li>
+                    <li><a href="#usage">使用指南</a></li>
+                    <li><a href="#scenarios">适用场景</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="cta-btn">立即咨询</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>守护呼吸安全，<br><span class="highlight">FOH除甲醛果冻</span>为您净化空间</h1>
+                <p>新型生物酶除醛技术，高效分解甲醛。无需通风，安全无异味，适用于新车、新房及密闭家具，让空气更清新，生活更安心。</p>
+                <div class="hero-actions">
+                    <a href="#usage" class="cta-btn btn-large">查看使用方法</a>
+                    <a href="#scenarios" class="cta-btn btn-large btn-outline">了解适用场景</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>为什么选择 FOH 除甲醛果冻？</h2>
+                    <p>区别于传统活性炭和喷剂，我们采用生物酶分解技术，从源头治理甲醛污染。</p>
+                </div>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <h3>高效分解</h3>
+                        <p>利用生物酶快速捕捉并分解空气中的甲醛分子，转化为无害的水和二氧化碳，效率远高于普通吸附材料。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <h3>安全无毒</h3>
+                        <p>主要成分均为食品级及环保原料，无刺激性气味，无二次污染，母婴及宠物家庭亦可放心使用。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="3" y1="9" x2="21" y2="9"></line>
+                                <line x1="9" y1="21" x2="9" y2="9"></line>
+                            </svg>
+                        </div>
+                        <h3>长效持效</h3>
+                        <p>果冻形态缓释技术，持续释放活性酶，持续分解甲醛长达 6-12 个月，无需频繁更换。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Usage Guide Section -->
+        <section id="usage" class="section usage-section">
+            <div class="container usage-container">
+                <div class="usage-content">
+                    <h2>简单四步，轻松除醛</h2>
+                    <p>FOH除甲醛果冻设计人性化，操作简单，即使是新手也能快速掌握，即刻开始净化您的环境。</p>
+                    
+                    <div class="usage-steps">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-text">
+                                <h4>打开包装</h4>
+                                <p>撕开果冻包装袋，将果冻放置在物体表面或悬挂于空气中。建议每个房间放置 2-4 个，密闭空间可适当增加。</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-text">
+                                <h4>密闭空间</h4>
+                                <p>关闭门窗，保持环境密闭。果冻会自动释放活性成分，开始捕捉并分解游离甲醛。</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-text">
+                                <h4>定时通风</h4>
+                                <p>建议每天通风 1-2 次，每次 30 分钟。通风后重新密闭，让果冻持续发挥作用。</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-text">
+                                <h4>定期检查</h4>
+                                <p>观察果冻状态，如完全融化，请及时更换新的果冻，确保除醛效果持续稳定。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="usage-visual">
+                    <img src="https://picsum.photos/seed/fohproduct/600/400" alt="FOH除甲醛果冻产品展示">
+                    <p>产品展示图：晶莹剔透的环保果冻形态，便于放置和观察</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scenarios Section -->
+        <section id="scenarios" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>广泛适用场景</h2>
+                    <p>无论是新车异味还是新房装修，FOH除甲醛果冻都能提供针对性的治理方案。</p>
+                </div>
+                <div class="scenarios-grid">
+                    <div class="scenario-card">
+                        <img src="https://picsum.photos/seed/carinterior/400/300" alt="新车除甲醛">
+                        <div class="scenario-overlay">
+                            <h3>新车除醛</h3>
+                            <p>快速去除新车皮革、胶水及内饰散发的异味与甲醛，保护驾乘人员健康。</p>
+                        </div>
+                    </div>
+                    <div class="scenario-card">
+                        <img src="https://picsum.photos/seed/newroom/400/300" alt="新房除甲醛">
+                        <div class="scenario-overlay">
+                            <h3>新房入住</h3>
+                            <p>装修后新房除醛必备，配合通风使用，加速甲醛达标，早日安心入住。</p>
+                        </div>
+                    </div>
+                    <div class="scenario-card">
+                        <img src="https://picsum.photos/seed/closet/400/300" alt="衣柜除醛">
+                        <div class="scenario-overlay">
+                            <h3>衣柜除醛</h3>
+                            <p>放置于衣柜内部，持续净化衣物储存环境，防止甲醛二次污染衣物。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                    <p>关于 FOH除甲醛果冻的使用效果与安全性，您可能关心这些问题。</p>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">果冻融化后还需要换吗？</div>
+                        <div class="faq-answer">
+                            果冻融化后，表示其有效成分已释放完毕，失去了吸附和分解甲醛的能力。建议在果冻完全融化后及时更换新的果冻，以保证持续有效的除醛效果。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">有异味吗？对人体有害吗？</div>
+                        <div class="faq-answer">
+                            FOH除甲醛果冻本身无刺激性气味，成分安全环保。在使用过程中，如果感觉到有轻微的植物清香，那是活性酶起作用的正常现象，对人体无害。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">可以放在冰箱或车里吗？</div>
+                        <div class="faq-answer">
+                            可以。果冻在低温环境下活性会降低，但在冰箱或车内高温环境下，其释放速度会加快。建议在车内使用时，避免阳光直射暴晒。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">多久能看到明显效果？</div>
+                        <div class="faq-answer">
+                            甲醛释放周期长，通常需要持续使用。使用初期（前1-2周）可感受到异味减轻，建议持续使用 3 个月以上，并配合通风，以达到最佳净化效果。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="safety-box">
+                    <h3>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                        温馨提示
+                    </h3>
+                    <ul>
+                        <li>请勿将产品放置在儿童容易接触的地方。</li>
+                        <li>如误食，请立即漱口并寻求医疗帮助。</li>
+                        <li>建议在使用前先在非主要空间进行小范围测试。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>FOH除甲醛果冻</h3>
+                    <p>致力于提供高效、安全、环保的室内空气净化解决方案。科技守护呼吸健康，让每一个家都充满清新空气。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>产品中心</h4>
+                    <ul>
+                        <li><a href="#">新车专用型</a></li>
+                        <li><a href="#">新房除醛套装</a></li>
+                        <li><a href="#">衣柜除味盒</a></li>
+                        <li><a href="#">车载除醛包</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>使用指南</h4>
+                    <ul>
+                        <li><a href="#">除醛原理</a></li>
+                        <li><a href="#">使用步骤</a></li>
+                        <li><a href="#">效果测试</a></li>
+                        <li><a href="#">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>客服热线：400-123-4567</li>
+                        <li>工作时间：周一至周日 9:00-21:00</li>
+                        <li>电子邮箱：support@foh-clean.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 FOH除甲醛果冻. All Rights Reserved. 本页面内容仅供参考，具体效果因环境而异。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的FAQ手风琴交互
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+
+            // 导航栏滚动效果
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+                } else {
+                    header.style.boxShadow = '0 2px 8px rgba(0,0,0,0.05)';
+                }
+            });
+        });
+    </script>
+</body>
+                              </html>
