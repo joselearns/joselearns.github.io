@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="maxplus2下载 - MaxPlus 2是一款基于Web的3D渲染软件，专为实时渲染和电影级视觉效果设计。提供详细安装教程、系统配置要求、版本更新日志及功能使用指南，帮助用户快速上手MaxPlus 2。">
+    <meta name="keywords" content="maxplus2下载,MaxPlus 2,3D渲染软件,实时渲染,Web3D,CG工具">
+    <title>maxplus2下载 - MaxPlus 2 3D渲染软件安装与使用指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #06b6d4;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.1s, box-shadow 0.2s;
+        }
+
+        .btn-primary {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Main Content */
+        main {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 24px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* Feature Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Download Section */
+        .download-card {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .version-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .version-item {
+            border: 1px solid var(--border-color);
+            padding: 16px 24px;
+            border-radius: var(--radius-md);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            min-width: 200px;
+        }
+
+        .version-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            letter-spacing: 0.5px;
+        }
+
+        .version-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .version-size {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .download-link {
+            margin-top: 32px;
+            padding: 16px 48px;
+            font-size: 1.1rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: var(--radius-md);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .download-link:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* System Requirements */
+        .req-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 0.95rem;
+        }
+
+        .req-table th, .req-table td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .req-table th {
+            background-color: #f1f5f9;
+            font-weight: 600;
+            width: 35%;
+        }
+
+        .req-table td {
+            color: var(--text-secondary);
+        }
+
+        /* Guide Steps */
+        .guide-steps {
+            display: grid;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .step {
+            display: flex;
+            gap: 16px;
+        }
+
+        .step-num {
+            background-color: var(--primary-color);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            margin-bottom: 4px;
+        }
+
+        .step-content p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e293b;
+            color: #94a3b8;
+            padding: 40px 0;
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            display: grid;
+            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 16px;
+            font-size: 1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid #334155;
+            margin-top: 24px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 16px 0;
+                gap: 12px;
+            }
+            nav ul {
+                gap: 16px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                <span>MaxPlus 2</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#features" class="active">软件特性</a></li>
+                    <li><a href="#download">下载中心</a></li>
+                    <li><a href="#requirements">系统配置</a></li>
+                    <li><a href="#guide">安装教程</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>maxplus2下载 - 专业级实时3D渲染解决方案</h1>
+            <p>MaxPlus 2 是新一代基于物理的渲染引擎，专为电影级视觉效果与实时交互设计。无需复杂的渲染农场，即可在浏览器中获得惊人的渲染速度与画质。</p>
+            <a href="#download" class="btn btn-primary">立即获取 MaxPlus 2</a>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- Features Section -->
+        <section id="features">
+            <h2 class="section-title">为什么选择 MaxPlus 2</h2>
+            <div class="features-grid">
+                <article class="feature-card">
+                    <span class="feature-icon">⚡</span>
+                    <h3>极速实时渲染</h3>
+                    <p>采用最新的光线追踪技术，大幅提升渲染效率。在编辑器中即可预览最终效果，告别漫长的等待时间。</p>
+                </article>
+                <article class="feature-card">
+                    <span class="feature-icon">🎨</span>
+                    <h3>影院级画质</h3>
+                    <p>支持全局光照、光线追踪和物理材质，精确模拟真实世界的光照与反射，输出符合电影工业标准的图像。</p>
+                </article>
+                <article class="feature-card">
+                    <span class="feature-icon">🌐</span>
+                    <h3>Web 3D 集成</h3>
+                    <p>一键导出为 WebGL 格式，轻松将3D场景部署到网页端，为用户提供沉浸式的在线浏览体验。</p>
+                </article>
+                <article class="feature-card">
+                    <span class="feature-icon">🔧</span>
+                    <h3>智能材质库</h3>
+                    <p>内置海量预设材质库，涵盖金属、玻璃、织物等多种类型，通过简单的参数调整即可实现逼真效果。</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section id="download">
+            <h2 class="section-title">maxplus2下载 - 版本中心</h2>
+            <div class="download-card">
+                <p style="margin-bottom: 16px; color: var(--text-secondary);">选择适合您操作系统的稳定版本。推荐下载最新发布的 2.4.0 版本以获得最佳性能。</p>
+                <div class="version-list">
+                    <div class="version-item">
+                        <span class="version-label">Windows 64-bit</span>
+                        <div class="version-name">MaxPlus 2.4.0</div>
+                        <div class="version-size">890 MB</div>
+                    </div>
+                    <div class="version-item">
+                        <span class="version-label">macOS (Intel & Apple Silicon)</span>
+                        <div class="version-name">MaxPlus 2.4.0</div>
+                        <div class="version-size">920 MB</div>
+                    </div>
+                    <div class="version-item">
+                        <span class="version-label">Linux (Ubuntu/Debian)</span>
+                        <div class="version-name">MaxPlus 2.4.0</div>
+                        <div class="version-size">850 MB</div>
+                    </div>
+                </div>
+                <a href="#" class="download-link" onclick="alert('模拟下载开始...'); return false;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    开始下载
+                </a>
+            </div>
+        </section>
+
+        <!-- System Requirements -->
+        <section id="requirements">
+            <h2 class="section-title">系统配置要求</h2>
+            <div style="background: white; padding: 24px; border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
+                <table class="req-table">
+                    <tbody>
+                        <tr>
+                            <th>操作系统</th>
+                            <td>Windows 10/11 (64位), macOS 10.15+, Ubuntu 20.04+</td>
+                        </tr>
+                        <tr>
+                            <th>CPU</th>
+                            <td>多核处理器 (推荐 Intel i7 或 AMD Ryzen 5 及以上)</td>
+                        </tr>
+                        <tr>
+                            <th>内存 (RAM)</th>
+                            <td>16GB 推荐，32GB 或更高可提升复杂场景性能</td>
+                        </tr>
+                        <tr>
+                            <th>显卡 (GPU)</th>
+                            <td>NVIDIA GeForce GTX 1060 或更高 (支持 CUDA); AMD Radeon RX 580 或更高</td>
+                        </tr>
+                        <tr>
+                            <th>存储空间</th>
+                            <td>至少 5GB 可用硬盘空间</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Installation Guide -->
+        <section id="guide">
+            <h2 class="section-title">安装与使用指南</h2>
+            <div class="guide-steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h4>下载安装包</h4>
+                        <p>访问官网下载对应操作系统的安装包，解压后运行安装程序。</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h4>运行安装向导</h4>
+                        <p>按照屏幕提示完成安装，建议勾选“创建桌面快捷方式”以便快速启动。</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h4>激活许可证</h4>
+                        <p>首次启动软件，请输入您的序列号进行激活。新用户可申请 30 天免费试用。</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <div class="step-content">
+                        <h4>开始创作</h4>
+                        <p>打开欢迎界面，选择模板或创建新项目，即可开始使用 MaxPlus 2 进行3D创作。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于 MaxPlus</h4>
+                    <p style="font-size: 0.85rem; line-height: 1.8;">
+                        MaxPlus 致力于为设计师和艺术家提供最先进的实时渲染工具。我们相信技术应该让创作更自由、更高效。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#download">maxplus2下载</a></li>
+                        <li><a href="#">更新日志</a></li>
+                        <li><a href="#">用户手册</a></li>
+                        <li><a href="#">社区论坛</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>支持与帮助</h4>
+                    <ul>
+                        <li><a href="#">常见问题 (FAQ)</a></li>
+                        <li><a href="#">联系技术支持</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">服务条款</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023-2024 MaxPlus Technology. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
