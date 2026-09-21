@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>怒吼天尊-经典格斗游戏角色图鉴与连招攻略</title>
+    <meta name="description" content="怒吼天尊专题站，提供怒吼天尊角色背景故事、技能解析、必杀技连招教学、出装推荐及实战技巧分享。">
+    <meta name="keywords" content="怒吼天尊,格斗游戏,连招攻略,技能解析,怒之拳">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff4d4d;
+            --secondary-color: #2c3e50;
+            --accent-color: #f1c40f;
+            --bg-dark: #1a1a1a;
+            --bg-card: #2d2d2d;
+            --text-light: #ecf0f1;
+            --text-gray: #bdc3c7;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: rgba(44, 62, 80, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--text-light);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), var(--bg-dark)), 
+                        url('https://picsum.photos/seed/fistfight/1920/1080') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.8);
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border: 2px solid var(--primary-color);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .cta-btn:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Layout Grid */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title a {
+            font-size: 1rem;
+            color: var(--text-gray);
+            font-weight: normal;
+        }
+
+        .section-title a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Character Profile Grid */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #444;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            border-color: var(--primary-color);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            filter: grayscale(20%);
+            transition: filter 0.3s ease;
+        }
+
+        .card:hover .card-img {
+            filter: grayscale(0%);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .card-meta {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .tag {
+            background-color: rgba(255, 77, 77, 0.1);
+            color: var(--primary-color);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: #ccc;
+            margin-bottom: 1.5rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 0.6rem;
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 4px;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+
+        .card-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Combo Section */
+        .combo-section {
+            background-color: #222;
+            padding: 3rem var(--spacing-unit);
+            margin-top: 2rem;
+        }
+
+        .combo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .combo-item {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .combo-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .combo-notation {
+            background-color: #1a1a1a;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #fff;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .combo-note {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        /* Stats & Comparison */
+        .stats-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-box {
+            flex: 1;
+            min-width: 250px;
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .stat-item {
+            margin-bottom: 1rem;
+        }
+
+        .stat-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background-color: #444;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--primary-color);
+        }
+
+        /* FAQ Section */
+        .faq-grid {
+            display: grid;
+            gap: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--bg-card);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+        }
+
+        .faq-question:hover {
+            background-color: #3a3a3a;
+        }
+
+        .faq-answer {
+            padding: 1rem;
+            color: var(--text-gray);
+            border-top: 1px solid #444;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: 3rem var(--spacing-unit);
+            margin-top: 4rem;
+            border-top: 1px solid #333;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #222;
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .section-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">👊 <span>怒吼天尊</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#intro">角色介绍</a></li>
+                    <li><a href="#skills">技能解析</a></li>
+                    <li><a href="#combos">连招攻略</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">☰</div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>怒吼天尊</h1>
+            <p>来自远古的格斗传奇，以雷霆般的拳头震撼全场。掌握核心连招，成为真正的擂主。</p>
+            <a href="#combos" class="cta-btn">学习必杀连招</a>
+        </section>
+
+        <!-- Character Intro Grid -->
+        <section id="intro" class="container">
+            <div class="section-title">
+                <h2>角色档案</h2>
+                <a href="#">查看更多 &rarr;</a>
+            </div>
+            
+            <div class="profile-grid">
+                <!-- Card 1 -->
+                <article class="card">
+                    <img src="https://picsum.photos/seed/fighter1/400/300" alt="怒吼天尊战斗姿态" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">雷霆之怒</h3>
+                        <div class="card-meta">
+                            <span class="tag">力量型</span>
+                            <span>等级: 99</span>
+                        </div>
+                        <p class="card-desc">
+                            拥有毁灭性的重拳，能够击碎防御。擅长近距离压制，利用冲击波控制对手走位。
+                        </p>
+                        <a href="#" class="card-btn">查看详细数据</a>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="card">
+                    <img src="https://picsum.photos/seed/fighter2/400/300" alt="怒吼天尊防御姿态" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">金刚护体</h3>
+                        <div class="card-meta">
+                            <span class="tag">防御型</span>
+                            <span>等级: 95</span>
+                        </div>
+                        <p class="card-desc">
+                            在受到攻击时能激发护盾，反弹伤害。适合稳健流派的玩家，以守为攻。
+                        </p>
+                        <a href="#" class="card-btn">查看详细数据</a>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="card">
+                    <img src="https://picsum.photos/seed/fighter3/400/300" alt="怒吼天尊必杀技" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">毁灭一击</h3>
+                        <div class="card-meta">
+                            <span class="tag">爆发型</span>
+                            <span>等级: 98</span>
+                        </div>
+                        <p class="card-desc">
+                            集全身力量于一拳，附带破甲效果。这是游戏中最具视觉冲击力的终结技。
+                        </p>
+                        <a href="#" class="card-btn">查看详细数据</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Combo Section -->
+        <section id="combos" class="combo-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>核心连招指南</h2>
+                    <a href="#">查看完整视频教程</a>
+                </div>
+
+                <div class="combo-grid">
+                    <div class="combo-item">
+                        <h3 class="combo-title">起手：下段扫腿 + 上勾拳</h3>
+                        <div class="combo-notation">
+                            <p>轻脚(1) &rarr; 空中轻拳(2)</p>
+                        </div>
+                        <p class="combo-note">利用轻脚将对手浮空，紧接着使用空中轻拳进行衔接，为后续必杀技蓄力。</p>
+                    </div>
+
+                    <div class="combo-item">
+                        <h3 class="combo-title">终结：怒气爆发连击</h3>
+                        <div class="combo-notation">
+                            <p>重拳(4) + 重脚(6) &rarr; 必杀技(214+P)</p>
+                        </div>
+                        <p class="combo-note">先手重拳造成硬直，接重脚将对手浮空，最后释放必杀技终结比赛。</p>
+                    </div>
+
+                    <div class="combo-item">
+                        <h3 class="combo-title">防守反击：铁山靠</h3>
+                        <div class="combo-notation">
+                            <p>防御(4) &rarr; 铁山靠(6+P)</p>
+                        </div>
+                        <p class="combo-note">在对手攻击落空的瞬间，使用铁山靠可造成巨额伤害并打断对方节奏。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="container">
+            <div class="section-title">
+                <h2>能力数值对比</h2>
+            </div>
+            <div class="stats-container">
+                <div class="stat-box">
+                    <h4>近战能力</h4>
+                    <div class="stat-item">
+                        <div class="stat-label"><span>攻击力</span><span>95%</span></div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 95%"></div></div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label"><span>速度</span><span>70%</span></div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 70%"></div></div>
+                    </div>
+                </div>
+
+                <div class="stat-box">
+                    <h4>远程控制</h4>
+                    <div class="stat-item">
+                        <div class="stat-label"><span>技能射程</span><span>85%</span></div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label"><span>冷却时间</span><span>60%</span></div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 60%"></div></div>
+                    </div>
+                </div>
+
+                <div class="stat-box">
+                    <h4>生存能力</h4>
+                    <div class="stat-item">
+                        <div class="stat-label"><span>生命值</span><span>90%</span></div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 90%"></div></div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label"><span>防御力</span><span>80%</span></div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 80%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="container" style="max-width: 800px;">
+            <div class="section-title">
+                <h2>常见问题 (FAQ)</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">怒吼天尊的弱点是什么？</div>
+                    <div class="faq-answer">虽然他拥有极高的近战伤害，但移动速度相对较慢。面对灵活的远程角色，需要保持距离或使用位移技能。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何快速积攒怒气？</div>
+                    <div class="faq-answer">持续命中对手或承受伤害都可以积攒怒气。建议使用轻拳轻脚进行连击，既安全又能快速回复能量。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">必杀技可以被防御吗？</div>
+                    <div class="faq-answer">怒吼天尊的终结技具有破甲效果，普通防御只能减少部分伤害，无法完全抵挡。需要通过闪避或格挡来应对。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">适合新手使用的角色吗？</div>
+                    <div class="faq-answer">非常适合。怒吼天尊的招式动作幅度大、前摇明显，新手玩家容易通过视觉预判来躲避和反击。</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于怒吼天尊</h4>
+                <ul>
+                    <li><a href="#">角色背景</a></li>
+                    <li><a href="#">故事原案</a></li>
+                    <li><a href="#">制作团队</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>游戏攻略</h4>
+                <ul>
+                    <li><a href="#">新手入门</a></li>
+                    <li><a href="#">PVP技巧</a></li>
+                    <li><a href="#">装备搭配</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>社区互动</h4>
+                <ul>
+                    <li><a href="#">玩家论坛</a></li>
+                    <li><a href="#">战队招募</a></li>
+                    <li><a href="#">BUG反馈</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系我们</h4>
+                <ul>
+                    <li><a href="#">商务合作</a></li>
+                    <li><a href="#">加入我们</a></li>
+                    <li><a href="#">意见反馈</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 怒吼天尊角色图鉴站. All Rights Reserved. 本站内容仅供学习交流使用.
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll for Navigation
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+  </html>
