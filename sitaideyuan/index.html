@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="死胎的原因专题页面，提供关于死胎的医学原因、孕期注意事项、预防措施及心理调适指南，帮助准父母了解风险因素并保障母婴安全。">
+    <meta name="keywords" content="死胎的原因,死胎,流产,孕期健康,胎儿发育,产前检查">
+    <title>死胎的原因-孕期胎儿发育异常与预防指南</title>
+    <style>
+        :root {
+            --primary-color: #2c7a7b;
+            --secondary-color: #2c5282;
+            --accent-color: #e53e3e;
+            --bg-color: #f7fafc;
+            --card-bg: #ffffff;
+            --text-main: #2d3748;
+            --text-light: #718096;
+            --border-radius: 8px;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            padding-bottom: 2rem;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            font-size: 1.8rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Main Content Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-inner {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Article Content */
+        article {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+        }
+
+        .intro-text {
+            margin-bottom: 2rem;
+            color: var(--text-light);
+        }
+
+        .cause-item {
+            margin-bottom: 2rem;
+        }
+
+        .cause-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--secondary-color);
+        }
+
+        .cause-item p {
+            margin-bottom: 0.5rem;
+        }
+
+        .cause-item ul {
+            list-style: disc inside;
+            margin-left: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .cause-item li {
+            margin-bottom: 0.5rem;
+        }
+
+        .warning-box {
+            background-color: #fff5f5;
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
+            color: #c53030;
+            font-size: 0.95rem;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .sidebar-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .sidebar-card h4 {
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        .checklist {
+            list-style: none;
+        }
+
+        .checklist li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .checklist li::before {
+            content: "✓";
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .checklist li.warning::before {
+            content: "!";
+            color: var(--accent-color);
+        }
+
+        .cta-box {
+            text-align: center;
+            background: #ebf8ff;
+            border: 1px solid #bee3f8;
+        }
+
+        .cta-box p {
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        details {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #edf2f7;
+            padding-bottom: 1rem;
+        }
+
+        details:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        summary {
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none;
+            position: relative;
+            padding-right: 1.5rem;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: "+";
+            position: absolute;
+            right: 0;
+            top: 0;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        details[open] summary::after {
+            content: "-";
+        }
+
+        details p {
+            margin-top: 0.5rem;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2d3748;
+            color: #a0aec0;
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <span>⚕️</span> 孕育健康指南
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">孕期保健</a></li>
+                <li><a href="#">分娩知识</a></li>
+                <li><a href="#">关于我们</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>死胎的原因</h1>
+        <p>全面解析导致胎儿停止发育的医学因素、孕期风险及科学预防方法，守护母婴安全。</p>
+    </div>
+</section>
+
+<main class="container">
+    <div class="main-grid">
+        <!-- Left Column: Detailed Content -->
+        <article>
+            <h2 class="section-title">死胎的主要原因</h2>
+            <p class="intro-text">死胎是指在妊娠20周后，胎儿在子宫内死亡的现象。其原因非常复杂，通常涉及母体、胎儿及胎盘等多个方面。了解这些原因有助于孕妈妈在日常生活中规避风险。</p>
+
+            <div class="cause-item">
+                <h3>1. 胎盘与脐带因素</h3>
+                <p>胎盘是胎儿与母体交换营养和氧气的关键器官。如果胎盘功能异常，可能导致胎儿缺氧。</p>
+                <ul>
+                    <li><strong>胎盘早剥：</strong>胎盘在胎儿娩出前部分或全部从子宫壁剥离。</li>
+                    <li><strong>前置胎盘：</strong>胎盘异常附着在子宫下段。</li>
+                    <li><strong>脐带异常：</strong>如脐带脱垂、脐带打结、脐带过长或过短，可能阻碍血液供应。</li>
+                    <li><strong>胎盘梗死：</strong>胎盘血管阻塞导致供血不足。</li>
+                </ul>
+            </div>
+
+            <div class="cause-item">
+                <h3>2. 胎儿染色体或结构异常</h3>
+                <p>这是导致死胎非常常见的原因。大多数严重的胎儿结构缺陷在胚胎早期就会导致发育停止。</p>
+                <ul>
+                    <li><strong>染色体异常：</strong>如染色体非整倍体（唐氏综合征等）。</li>
+                    <li><strong>致命性结构缺陷：</strong>如无脑儿、严重的心脏缺陷或严重的肾脏畸形。</li>
+                </ul>
+            </div>
+
+            <div class="cause-item">
+                <h3>3. 母体健康状况</h3>
+                <p>母体的基础疾病或妊娠并发症会直接影响胎儿的生存环境。</p>
+                <ul>
+                    <li><strong>妊娠期高血压疾病：</strong>包括子痫前期，导致胎盘供血不足。</li>
+                    <li><strong>糖尿病：</strong>血糖控制不佳会影响胎儿发育。</li>
+                    <li><strong>感染：</strong>如弓形虫病、巨细胞病毒、风疹病毒、梅毒等，可经胎盘传染给胎儿。</li>
+                    <li><strong>自身免疫性疾病：</strong>如抗磷脂综合征。</li>
+                </ul>
+            </div>
+
+            <div class="cause-item">
+                <h3>4. 环境与生活方式因素</h3>
+                <p>不良的生活习惯和环境暴露可能增加风险。</p>
+                <ul>
+                    <li><strong>吸烟与饮酒：</strong>尼古丁和酒精会收缩血管，减少胎盘血流。</li>
+                    <li><strong>接触有毒物质：</strong>如重金属、辐射、某些化学药剂。</li>
+                    <li><strong>过度劳累与精神压力：</strong>长期处于高压状态可能影响内分泌。</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <strong>重要提示：</strong> 并非所有死胎都有明显的前兆。定期进行产前检查（如B超监测胎心、唐筛、糖耐等）是发现潜在风险的最有效手段。
+            </div>
+        </article>
+
+        <!-- Right Column: Sidebar & FAQ -->
+        <aside>
+            <div class="sidebar-card cta-box">
+                <h4>产检的重要性</h4>
+                <p>按时进行产检，能及时发现并处理可能影响胎儿发育的问题。</p>
+                <a href="#" class="btn">预约产检</a>
+            </div>
+
+            <div class="sidebar-card">
+                <h4>孕期自我监测指南</h4>
+                <ul class="checklist">
+                    <li>每日数胎动</li>
+                    <li>监测血压变化</li>
+                    <li>注意腹痛或阴道流血</li>
+                    <li class="warning">定期复查B超</li>
+                    <li>保持营养均衡</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card">
+                <h4>常见问题 (FAQ)</h4>
+                <details>
+                    <summary>发现死胎后需要做什么？</summary>
+                    <p>一旦确诊，医生通常会建议引产。引产的方式取决于孕周和身体状况，目的是安全地结束妊娠并取出胎儿。</p>
+                </details>
+                <details>
+                    <summary>再次怀孕需要注意什么？</summary>
+                    <p>再次怀孕前应进行全面体检，特别是排查导致死胎的潜在因素（如抗磷脂综合征、凝血功能异常等）。</p>
+                </details>
+                <details>
+                    <summary>胎动消失是死胎的唯一征兆吗？</summary>
+                    <p>虽然胎动减少或消失是重要征兆，但并非绝对。有时胎心监护异常（NST无反应型）也是早期预警信号。</p>
+                </details>
+            </div>
+        </aside>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2023 孕育健康指南. 保留所有权利。</p>
+        <p>本网站内容仅供参考，不能替代专业医疗建议、诊断或治疗。如有身体不适，请及时就医。</p>
+    </div>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+
+</body>
+</html>
