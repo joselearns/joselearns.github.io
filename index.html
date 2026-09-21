@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贴身校花2-在线漫画阅读与同人社区平台</title>
+    <meta name="description" content="贴身校花2漫画阅读平台，提供最新章节、高清大图及精美同人作品。涵盖校园恋爱、都市异能、修真冒险等热门题材，支持手机与电脑端流畅阅读。">
+    <meta name="keywords" content="贴身校花2,在线漫画,校园漫画,同人作品,高清阅读">
+    <style>
+        :root {
+            --primary-color: #ff6b6b;
+            --secondary-color: #4ecdc4;
+            --dark-bg: #1a1a2e;
+            --card-bg: #16213e;
+            --text-main: #ffffff;
+            --text-sub: #a0a0a0;
+            --spacing-unit: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background: rgba(26, 26, 46, 0.95);
+            border-bottom: 2px solid var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .nav-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            font-size: 1rem;
+            color: var(--text-main);
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .search-box {
+            display: flex;
+            background: #0f3460;
+            border-radius: 20px;
+            padding: 4px 12px;
+        }
+
+        .search-box input {
+            background: transparent;
+            border: none;
+            color: #fff;
+            outline: none;
+            width: 150px;
+        }
+
+        .search-box button {
+            background: none;
+            border: none;
+            color: var(--text-sub);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(to bottom, rgba(26,26,46,0.3), var(--dark-bg)), url('https://picsum.photos/seed/school/1600/600') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-sub);
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-2px);
+            background-color: #ff5252;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 20px;
+        }
+
+        /* Section Titles */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 12px;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+        }
+
+        .more-link {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
+
+        /* Comic Grid */
+        .comic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .comic-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .comic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .card-cover {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            background-color: #0f3460;
+        }
+
+        .card-info {
+            padding: 12px;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 8px;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Sidebar */
+        .sidebar-section {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .rank-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .rank-list li:last-child {
+            border-bottom: none;
+        }
+
+        .rank-num {
+            width: 24px;
+            height: 24px;
+            background-color: var(--secondary-color);
+            color: var(--dark-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .rank-num.top-3 {
+            background-color: #ffd700;
+        }
+
+        .rank-info {
+            flex: 1;
+        }
+
+        .rank-title {
+            font-size: 0.95rem;
+            display: block;
+        }
+
+        .rank-views {
+            font-size: 0.75rem;
+            color: var(--text-sub);
+        }
+
+        /* Tags Cloud */
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background-color: rgba(78, 205, 196, 0.1);
+            color: var(--secondary-color);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        .tag:hover {
+            background-color: var(--secondary-color);
+            color: var(--dark-bg);
+        }
+
+        /* Latest Updates List */
+        .update-list li {
+            padding: 12px 0;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .update-title {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .update-time {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f1926;
+            padding: 40px 20px;
+            margin-top: 40px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: var(--text-sub);
+            margin: 0 10px;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Simplified for mobile */
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .search-box {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <div class="logo">
+            <span>📚</span> 贴身校花2
+        </div>
+        <nav class="nav-links">
+            <a href="#" class="active">首页</a>
+            <a href="#">连载中</a>
+            <a href="#">完结作品</a>
+            <a href="#">同人专区</a>
+            <a href="#">排行榜</a>
+        </nav>
+        <div class="search-box">
+            <input type="text" placeholder="搜索作品...">
+            <button>🔍</button>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>贴身校花2：校园幻想新篇章</h1>
+        <p>探索更精彩的校园生活，体验热血与情感的交织。高清漫画免费阅读，每日更新。</p>
+        <a href="#" class="hero-btn">立即开始阅读</a>
+    </div>
+</section>
+
+<main class="container">
+    <!-- Left Content -->
+    <div class="content-area">
+        
+        <!-- Featured Section -->
+        <section>
+            <div class="section-header">
+                <h2>🔥 本周热门推荐</h2>
+                <a href="#" class="more-link">查看全部 ></a>
+            </div>
+            <div class="comic-grid">
+                <article class="comic-card">
+                    <img src="https://picsum.photos/seed/comic1/300/400" alt="漫画封面" class="card-cover">
+                    <div class="card-info">
+                        <h3 class="card-title">贴身校花2：都市传说篇</h3>
+                        <div class="card-meta">
+                            <span>9.8分</span>
+                            <span>更新至 128话</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="comic-card">
+                    <img src="https://picsum.photos/seed/comic2/300/400" alt="漫画封面" class="card-cover">
+                    <div class="card-info">
+                        <h3 class="card-title">贴身校花2：校花秘史</h3>
+                        <div class="card-meta">
+                            <span>9.5分</span>
+                            <span>更新至 85话</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="comic-card">
+                    <img src="https://picsum.photos/seed/comic3/300/400" alt="漫画封面" class="card-cover">
+                    <div class="card-info">
+                        <h3 class="card-title">贴身校花2：双女主模式</h3>
+                        <div class="card-meta">
+                            <span>9.2分</span>
+                            <span>更新至 210话</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="comic-card">
+                    <img src="https://picsum.photos/seed/comic4/300/400" alt="漫画封面" class="card-cover">
+                    <div class="card-info">
+                        <h3 class="card-title">贴身校花2：校园保卫战</h3>
+                        <div class="card-meta">
+                            <span>8.9分</span>
+                            <span>更新至 56话</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Latest Updates -->
+        <section style="margin-top: 40px;">
+            <div class="section-header">
+                <h2>📖 最新章节</h2>
+                <a href="#" class="more-link">查看全部 ></a>
+            </div>
+            <ul class="update-list">
+                <li>
+                    <a href="#" class="update-title">贴身校花2 第129章：意外的重逢</a>
+                    <span class="update-time">10分钟前</span>
+                </li>
+                <li>
+                    <a href="#" class="update-title">贴身校花2 第128章：暗流涌动</a>
+                    <span class="update-time">2小时前</span>
+                </li>
+                <li>
+                    <a href="#" class="update-title">贴身校花2 第127章：新的挑战</a>
+                    <span class="update-time">5小时前</span>
+                </li>
+                <li>
+                    <a href="#" class="update-title">贴身校花2 第126章：校园祭准备</a>
+                    <span class="update-time">昨天</span>
+                </li>
+                <li>
+                    <a href="#" class="update-title">贴身校花2 第125章：夜谈会</a>
+                    <span class="update-time">昨天</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Category Tags -->
+        <section style="margin-top: 40px;">
+            <div class="section-header">
+                <h2>🏷️ 热门标签</h2>
+            </div>
+            <div class="tag-cloud">
+                <a href="#" class="tag">校园恋爱</a>
+                <a href="#" class="tag">都市异能</a>
+                <a href="#" class="tag">修真</a>
+                <a href="#" class="tag">后宫</a>
+                <a href="#" class="tag">搞笑</a>
+                <a href="#" class="tag">热血</a>
+                <a href="#" class="tag">无敌流</a>
+                <a href="#" class="tag">系统</a>
+                <a href="#" class="tag">双女主</a>
+                <a href="#" class="tag">萌宠</a>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Right Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-section">
+            <div class="section-header">
+                <h2>🏆 月度榜单</h2>
+            </div>
+            <ul class="rank-list">
+                <li>
+                    <span class="rank-num top-3">1</span>
+                    <div class="rank-info">
+                        <span class="rank-title">贴身校花2：终极进化</span>
+                        <span class="rank-views">23.5万阅读</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="rank-num top-3">2</span>
+                    <div class="rank-info">
+                        <span class="rank-title">贴身校花2：暗夜行动</span>
+                        <span class="rank-views">18.2万阅读</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="rank-num top-3">3</span>
+                    <div class="rank-info">
+                        <span class="rank-title">贴身校花2：初遇</span>
+                        <span class="rank-views">15.8万阅读</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="rank-num">4</span>
+                    <div class="rank-info">
+                        <span class="rank-title">贴身校花2：觉醒</span>
+                        <span class="rank-views">12.1万阅读</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="rank-num">5</span>
+                    <div class="rank-info">
+                        <span class="rank-title">贴身校花2：情书</span>
+                        <span class="rank-views">9.4万阅读</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="section-header">
+                <h2>📢 平台公告</h2>
+            </div>
+            <ul class="update-list">
+                <li>
+                    <a href="#" class="update-title">关于服务器维护的通知</a>
+                    <span class="update-time">2023-10</span>
+                </li>
+                <li>
+                    <a href="#" class="update-title">加入同人创作大赛</a>
+                    <span class="update-time">2023-09</span>
+                </li>
+            </ul>
+        </div>
+
+    </aside>
+</main>
+
+<footer>
+    <div class="footer-links">
+        <a href="#">关于我们</a>
+        <a href="#">免责声明</a>
+        <a href="#">用户协议</a>
+        <a href="#">联系客服</a>
+        <a href="#">投稿专区</a>
+    </div>
+    <p class="copyright">
+        © 2023 贴身校花2漫画站 版权所有. 本站内容仅供学习交流使用，请勿用于商业用途。
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+</html>
