@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QQ封神记-在线漫画阅读与原著同人资源站</title>
+    <meta name="description" content="QQ封神记漫画在线阅读平台，提供最新章节、高清大图、人物图鉴及同人创作展示。汇聚封神榜题材热门作品，满足读者对神话故事的深度探索需求。">
+    <meta name="keywords" content="QQ封神记, 封神记漫画, 封神榜同人, 神话漫画, 在线阅读">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8a2be2;
+            --secondary-color: #4b0082;
+            --accent-color: #ffd700;
+            --text-main: #333;
+            --text-light: #666;
+            --bg-body: #f8f9fa;
+            --bg-card: #ffffff;
+            --border-radius: 8px;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: rgba(255,255,255,0.9);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .search-box {
+            display: flex;
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 5px 10px;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            color: white;
+            outline: none;
+            width: 150px;
+        }
+
+        .search-box button {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to bottom, #e6e6fa, #ffffff);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .hero p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid #ddd;
+            color: var(--text-light);
+        }
+
+        .tag:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Main Content Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 24px;
+            padding: 40px 0;
+        }
+
+        /* Sidebar */
+        aside {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            height: fit-content;
+        }
+
+        aside h3 {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-color);
+            font-size: 1.1rem;
+        }
+
+        .category-list li {
+            margin-bottom: 8px;
+        }
+
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .category-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .category-list span.count {
+            background: #eee;
+            padding: 0 6px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
+
+        /* Content Area */
+        .content-area h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .content-area h2::before {
+            content: '';
+            display: block;
+            width: 5px;
+            height: 24px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .comic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .comic-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .comic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .card-cover {
+            width: 100%;
+            height: 240px;
+            background-color: #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-status {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        .card-info {
+            padding: 12px;
+        }
+
+        .card-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Section Style */
+        .section-block {
+            margin-bottom: 40px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .more-link {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .more-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Ranking List */
+        .ranking-list {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .ranking-item {
+            display: flex;
+            padding: 15px;
+            border-bottom: 1px solid #f0f0f0;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .ranking-item:last-child {
+            border-bottom: none;
+        }
+
+        .rank-num {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ccc;
+            width: 30px;
+            text-align: center;
+        }
+
+        .rank-num.top-1 { color: #ffd700; font-size: 1.5rem; }
+        .rank-num.top-2 { color: #c0c0c0; }
+        .rank-num.top-3 { color: #cd7f32; }
+
+        .rank-info {
+            flex: 1;
+        }
+
+        .rank-title {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .rank-desc {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .rank-score {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: #bdc3c7;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav {
+                display: none; /* Mobile menu simplified for demo */
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .comic-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                <span>⚡</span> QQ封神记
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">连载库</a></li>
+                    <li><a href="#">完结榜</a></li>
+                    <li><a href="#">角色图鉴</a></li>
+                    <li><a href="#">同人创作</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索漫画/作者...">
+                <button type="button">🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>探索神话新世界</h1>
+            <p>汇聚全网热门QQ封神记同人作品，高清大图免费看。从商周争霸到现代修真，为您呈现不一样的封神宇宙。</p>
+            <div class="hero-tags">
+                <a href="#" class="tag">穿越重生</a>
+                <a href="#" class="tag">系统流</a>
+                <a href="#" class="tag">高武世界</a>
+                <a href="#" class="tag">爽文</a>
+                <a href="#" class="tag">封神榜</a>
+            </div>
+        </section>
+
+        <div class="main-grid">
+            <!-- Sidebar -->
+            <aside>
+                <h3>热门分类</h3>
+                <ul class="category-list">
+                    <li><a href="#">全部作品 <span class="count">128</span></a></li>
+                    <li><a href="#">穿越时空 <span class="count">45</span></a></li>
+                    <li><a href="#">封神演义 <span class="count">32</span></a></li>
+                    <li><a href="#">洪荒流 <span class="count">28</span></a></li>
+                    <li><a href="#">系统辅助 <span class="count">15</span></a></li>
+                    <li><a href="#">女性向 <span class="count">8</span></a></li>
+                </ul>
+
+                <h3 style="margin-top: 30px;">阅读推荐</h3>
+                <div style="margin-top: 15px;">
+                    <div style="margin-bottom: 15px;">
+                        <img src="https://picsum.photos/seed/tech1/60/60" alt="Cover" style="border-radius: 4px; float: left; margin-right: 10px;">
+                        <div style="font-size: 0.85rem; font-weight: bold; margin-bottom: 2px;">封神：我，纣王，暴君</div>
+                        <div style="font-size: 0.75rem; color: #999;">今日更新 3 章</div>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <img src="https://picsum.photos/seed/tech2/60/60" alt="Cover" style="border-radius: 4px; float: left; margin-right: 10px;">
+                        <div style="font-size: 0.85rem; font-weight: bold; margin-bottom: 2px;">神话：从截教开始</div>
+                        <div style="font-size: 0.75rem; color: #999;">今日更新 1 章</div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="content-area">
+                
+                <!-- Section 1: Recommended -->
+                <section class="section-block">
+                    <div class="section-header">
+                        <h2>编辑推荐</h2>
+                        <a href="#" class="more-link">查看更多 ></a>
+                    </div>
+                    <div class="comic-grid">
+                        <article class="comic-card">
+                            <div class="card-cover">
+                                <span class="card-status">连载中</span>
+                                <img src="https://picsum.photos/seed/comic1/300/400" alt="封面">
+                            </div>
+                            <div class="card-info">
+                                <h3 class="card-title">封神：大商镇国大将军</h3>
+                                <div class="card-meta">
+                                    <span>热度: 9.8</span>
+                                    <span>1024人阅读</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="comic-card">
+                            <div class="card-cover">
+                                <span class="card-status">连载中</span>
+                                <img src="https://picsum.photos/seed/comic2/300/400" alt="封面">
+                            </div>
+                            <div class="card-info">
+                                <h3 class="card-title">西游之封神榜</h3>
+                                <div class="card-meta">
+                                    <span>热度: 9.5</span>
+                                    <span>890人阅读</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="comic-card">
+                            <div class="card-cover">
+                                <span class="card-status">已完结</span>
+                                <img src="https://picsum.photos/seed/comic3/300/400" alt="封面">
+                            </div>
+                            <div class="card-info">
+                                <h3 class="card-title">神话版三国</h3>
+                                <div class="card-meta">
+                                    <span>热度: 9.2</span>
+                                    <span>567人阅读</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="comic-card">
+                            <div class="card-cover">
+                                <span class="card-status">连载中</span>
+                                <img src="https://picsum.photos/seed/comic4/300/400" alt="封面">
+                            </div>
+                            <div class="card-info">
+                                <h3 class="card-title">洪荒：我，通天教主</h3>
+                                <div class="card-meta">
+                                    <span>热度: 9.6</span>
+                                    <span>1200人阅读</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Section 2: Ranking -->
+                <section class="section-block">
+                    <div class="section-header">
+                        <h2>本周热门榜</h2>
+                        <a href="#" class="more-link">查看完整榜单 ></a>
+                    </div>
+                    <div class="ranking-list">
+                        <div class="ranking-item">
+                            <div class="rank-num top-1">1</div>
+                            <div class="rank-info">
+                                <a href="#" class="rank-title">封神：开局截教通天</a>
+                                <span class="rank-desc">穿越成截教通天，面对三教封神，该如何抉择？</span>
+                            </div>
+                            <div class="rank-score">9.9</div>
+                        </div>
+                        <div class="ranking-item">
+                            <div class="rank-num top-2">2</div>
+                            <div class="rank-info">
+                                <a href="#" class="rank-title">大商：我不装了，纣王</a>
+                                <span class="rank-desc">暴君系统觉醒，在这个妖魔横行的世界杀出一条血路。</span>
+                            </div>
+                            <div class="rank-score">9.8</div>
+                        </div>
+                        <div class="ranking-item">
+                            <div class="rank-num top-3">3</div>
+                            <div class="rank-info">
+                                <a href="#" class="rank-title">神话：从哪吒开始无敌</a>
+                                <span class="rank-desc">哪吒重生，重修肉身，誓要重回天庭闹海。</span>
+                            </div>
+                            <div class="rank-score">9.7</div>
+                        </div>
+                        <div class="ranking-item">
+                            <div class="rank-num">4</div>
+                            <div class="rank-info">
+                                <a href="#" class="rank-title">封神：我有亿万神兵</a>
+                                <span class="rank-desc">兵解重修，携万千神兵法宝，横扫万界。</span>
+                            </div>
+                            <div class="rank-score">9.6</div>
+                        </div>
+                        <div class="ranking-item">
+                            <div class="rank-num">5</div>
+                            <div class="rank-info">
+                                <a href="#" class="rank-title">西游之妖族复兴</a>
+                                <span class="rank-desc">妖族复兴计划，从孙悟空开始。</span>
+                            </div>
+                            <div class="rank-score">9.5</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 3: Latest Updates -->
+                <section class="section-block">
+                    <div class="section-header">
+                        <h2>最新更新</h2>
+                    </div>
+                    <div style="background: var(--bg-card); border-radius: var(--border-radius); padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                        <ul style="display: flex; flex-direction: column; gap: 15px;">
+                            <li style="display: flex; justify-content: space-between; border-bottom: 1px dashed #eee; padding-bottom: 10px;">
+                                <div>
+                                    <a href="#" style="font-weight: bold; color: var(--text-main);">第 1082 章 诛仙剑阵的威力</a>
+                                    <span style="font-size: 0.8rem; color: #999; margin-left: 10px;">作者：封神客</span>
+                                </div>
+                                <span style="font-size: 0.85rem; color: #999;">10分钟前</span>
+                            </li>
+                            <li style="display: flex; justify-content: space-between; border-bottom: 1px dashed #eee; padding-bottom: 10px;">
+                                <div>
+                                    <a href="#" style="font-weight: bold; color: var(--text-main);">第 305 章 姬发伐纣</a>
+                                    <span style="font-size: 0.8rem; color: #999; margin-left: 10px;">作者：大商铁血</span>
+                                </div>
+                                <span style="font-size: 0.85rem; color: #999;">35分钟前</span>
+                            </li>
+                            <li style="display: flex; justify-content: space-between; border-bottom: 1px dashed #eee; padding-bottom: 10px;">
+                                <div>
+                                    <a href="#" style="font-weight: bold; color: var(--text-main);">第 120 章 蟠桃盛会</a>
+                                    <span style="font-size: 0.8rem; color: #999; margin-left: 10px;">作者：神话老祖</span>
+                                </div>
+                                <span style="font-size: 0.85rem; color: #999;">1小时前</span>
+                            </li>
+                            <li style="display: flex; justify-content: space-between; border-bottom: 1px dashed #eee; padding-bottom: 10px;">
+                                <div>
+                                    <a href="#" style="font-weight: bold; color: var(--text-main);">第 42 章 哪吒闹海</a>
+                                    <span style="font-size: 0.8rem; color: #999; margin-left: 10px;">作者：三太子归来</span>
+                                </div>
+                                <span style="font-size: 0.85rem; color: #999;">2小时前</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">
+                        QQ封神记漫画网致力于为读者提供最优质的封神题材同人漫画与小说阅读体验。我们精选全网热门作品，打造沉浸式神话阅读空间。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">漫画分类</a></li>
+                        <li><a href="#">排行榜单</a></li>
+                        <li><a href="#">作者专区</a></li>
+                        <li><a href="#">投稿指南</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">用户协议</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">联系客服</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <p style="font-size: 0.85rem; margin-top: 10px;">扫描二维码关注微信公众号</p>
+                    <div style="width: 100px; height: 100px; background: #fff; margin-top: 10px; display: flex; align-items: center; justify-content: center; color: #333; font-size: 0.8rem;">
+                        [QR Code]
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023-2024 QQ封神记在线阅读平台. All Rights Reserved.</p>
+                <p style="font-size: 0.8rem; margin-top: 5px; color: #7f8c8d;">
+                    本站内容均来自互联网，仅供学习交流使用，请支持正版作品。
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
